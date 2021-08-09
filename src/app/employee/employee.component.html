@@ -1,0 +1,89 @@
+<h1>Employee Entry form</h1>
+<div>
+    <label>Enter the Employee First Name : </label>
+    <input type="text" placeholder="Please enter the employee first name here ..." [(ngModel)]="NewEmployee.firstName" />
+</div>
+<div>
+    <label>Enter the employee Last Name :</label>
+    <input type="text" placeholder="Please enter the employee last name here..." [(ngModel)]="NewEmployee.lastName" />
+</div>
+<div>
+    <label>Enter the employee ID number :</label>
+    <input type="text" placeholder="Please enter the employee Id here..." [(ngModel)]="NewEmployee.id" />
+</div>
+<div>
+    <label>Enter the employee email ID: </label>
+    <input type="text" placeholder="Please enter the employee email ID here.." [(ngModel)]="NewEmployee.email" />
+</div>
+<div>
+    <label>Enter the Employee Desigantion :</label>
+    <input type="text" placeholder="Please enter the employee designation" [(ngModel)]="NewEmployee.designation" />
+</div>
+<div>
+    <label>Select your gender :</label>
+    <input type="radio" value="male"  [(ngModel)]="NewEmployee.gender" />Male
+    <input type="radio" value="Female" [(ngModel)]="NewEmployee.gender" />Female
+    <input type="radio" value="Don't want specify this" [(ngModel)]="NewEmployee.gender" />Others
+</div>
+<div>
+    <label>Enter your Date of Birth :</label>
+    <input type="date" [(ngModel)]="NewEmployee.dob" />
+</div>
+<div>
+    <label>Select your skill : </label>
+    <input type="checkbox" value="Java" (change)="onChangeCheckbox($event)" />Java
+    <input type="checkbox" value="JavaScript" (change)="onChangeCheckbox($event)" />JavaScript
+    <input type="checkbox" value="Python" (change)="onChangeCheckbox($event)" />Python
+    <input type="checkbox" value="Angular" (change)="onChangeCheckbox($event)" />Angular
+    <input type="checkbox" value="Dot Net" (change)="onChangeCheckbox($event)" />.Net
+    <input type="checkbox" value="React" (change)="onChangeCheckbox($event)" />React
+</div>
+<div>
+    <button style="margin: 10px;" (click)="addNewEmployee()">Add new employee</button>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Desigantion</td>
+                <td>DOB</td>
+                <td>Gender</td>
+                <td>Skills</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of EmployeeList">
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.designation}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.dob}}</td>
+                <td>{{employee.gender}}</td>
+                <td>
+                    <ul *ngFor="let skill of employee.skills">
+                        <li>{{skill}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <label>Enter the Email ID: </label>
+    <input type="text" placeholder="Enter the Email ID here" [(ngModel)]="LoginForm.email" />
+</div>
+<div>
+    <label>Enter the Passowrd: </label>
+    <input [type]="passwordShowHide ? 'password' : 'text'" placeholder="Type your password here"
+    [(ngModel)]="LoginForm.password" />
+    <img src="/assets/open-eye.png" class="img-eye" *ngIf="!passwordShowHide"  (click)="showHidePassword()">
+    <img src="/assets/close-eye.png" class="img-eye" *ngIf="passwordShowHide"  (click)="showHidePassword()"> 
+</div>
+<div>
+    <button (click)="onClickLogin()">Login</button>
+</div>

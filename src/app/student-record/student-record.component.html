@@ -1,0 +1,68 @@
+<div>
+    <label>Select Student List :</label>
+    <select (change)="onSelectStudent($event)">
+        <option selected disabled>Please select any student</option>
+        <option>Show All Student List</option>
+        <option *ngFor="let namelist of studentList">{{namelist.first_name}}</option>
+    </select>
+</div>
+<div>
+    <label>Enter your student ID number:</label>
+    <input type="number" placeholder="Enter the student ID here" [(ngModel)]="studentNewEntry.id"  />
+</div>
+<div>
+    <label>Enter the First Name :</label>
+    <input type="text" placeholder="Please Enter the firstName of student" [(ngModel)]="studentNewEntry.first_name"  />
+</div>
+<div>
+    <label>Enter the Last Name :</label>
+    <input type="text" placeholder="Please Enter the LastName of student"  [(ngModel)]="studentNewEntry.last_name" />
+</div>
+<div>
+    <label>Enter the Email ID :</label>
+    <input type="text" placeholder="Please Enter the email of student" [(ngModel)]="studentNewEntry.email"  />
+</div>
+<div>
+    <label>Upload student passport size picture : </label>
+    <input type="text" placeholder="Please place Image URL here" [(ngModel)]="studentNewEntry.avatar"  />
+</div>
+<div>
+    <button (click)="addNewStudent()">Click to add new student</button>
+</div>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Email</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Image</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of studentList">
+            <td>{{list.id}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.first_name}}</td>
+            <td>{{list.last_name}}</td>
+            <td>
+                <img src="{{list.avatar}}" class="image" />
+            </td>
+        </tr>
+        <!-- <tr *ngFor="let list of studentNewEntry">
+            <td>{{list.id}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.first_name}}</td>
+            <td>{{list.last_name}}</td>
+            <td>
+                <img src="{{list.avatar}}" class="image" />
+            </td>
+        </tr> -->
+    </tbody>
+</table>
+</div>
+<div>
+    <h1 *ngIf="studentList.length==0">Page Loading Please wait</h1>
+</div>

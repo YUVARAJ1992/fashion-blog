@@ -1,0 +1,14 @@
+<div>
+    <div>
+        <label>Enter the Email ID: </label>
+        <input type="text" placeholder="Enter the Email ID here" [(ngModel)]="loginForm.email" />
+    </div>
+    <div>
+        <label>Enter the Password: </label>
+        <input type="password" placeholder="Type your password here" [(ngModel)]="loginForm.password" />
+    </div>
+    <div>
+        <button (click)="onClickLogin()">Login</button>
+    </div>
+    
+</div>

@@ -1,0 +1,60 @@
+<div>
+    <div>
+        <label>Enter the Email ID: </label>
+        <input type="text" placeholder="Enter the Email ID here" [(ngModel)]="loginForm.email" />
+    </div>
+    <div>
+        <label>Enter the Passowrd: </label>
+        <input type="password" placeholder="Type your password here" [(ngModel)]="loginForm.password" />
+    </div>
+    <div>
+        <button (click)="onClickLogin()">Login</button>
+    </div>
+
+</div>
+<div>
+    <div>
+        <label>First Name : </label>
+        <input type="text" placeholder="Enter your Firstname here" [(ngModel)]="newAccount.first_name" />
+    </div>
+    <div>
+        <label>Last Name : </label>
+        <input type="text" placeholder="Enter your Lastname here" [(ngModel)]="newAccount.last_name" />
+    </div>
+    <div>
+        <label>Email : </label>
+        <input type="email" placeholder="Enter your Email here" [(ngModel)]="newAccount.email" />
+    </div>
+    <div>
+        <p><b>Address</b></p>
+        <label>Address 1</label>
+        <input type="text" placeholder="Enter address 1" [(ngModel)]="newAccount.address1" />
+    </div>
+    <div>
+        <label>Address 2</label>
+        <input type="text" placeholder="Enter address 2" [(ngModel)]="newAccount.address2" />
+    </div>
+    <div>
+        <label>Country :</label>
+        <select (change)="onSelectCountry($event)"  [(ngModel)]="newAccount.country">
+            <option selected disabled>Please select any country</option>
+            <option *ngFor="let countries of CountryList" [value]="countries.code">{{countries.name}}</option>
+        </select>
+    </div>
+    <div>
+        <label>State :</label>
+        <select (change)="onSelectState($event)"  [(ngModel)]="newAccount.state">
+            <option selected disabled>Please select state</option>
+            <option *ngFor="let states of StateList" [value]="states.state_code">{{states.name}}</option>
+        </select>
+    </div>
+    <div>
+        <label>City :</label>
+        <select  [(ngModel)]="newAccount.city">
+            <option selected disabled>Please select city</option>
+            <option *ngFor="let cities of CityList" [value]="cities.name">{{cities.name}}</option>
+        </select>
+    </div>
+    <button (click)="onCreateAccount()">Create Account</button>
+
+</div>

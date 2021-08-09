@@ -1,0 +1,43 @@
+<div>
+    <label>Select an ID: </label>
+    <select (change)="onSelectID($event)">
+        <option selected disabled>Please select any ID:</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+    </select>
+</div>
+<div>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Profile Picture</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let profile of userProfileList"> 
+            <td>{{profile.id}}</td>
+            <td>{{profile.first_name}}</td>
+            <td>{{profile.last_name}}</td>
+            <td>{{profile.email}}</td>
+            <td>
+                <img src="{{profile.avatar}}" class="image" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div *ngIf="userProfileList.length == 0">
+    <h1>Loading, Please wait for while</h1>
+</div>

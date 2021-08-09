@@ -1,0 +1,67 @@
+<div>
+    <Label>Select any one Category : </Label>
+    <select  (change)="onSelectCategory($event)" >
+        <option selected disabled>Please select anyone category</option>
+        <option>Show All Categories</option>
+        <option *ngFor="let categories of CategoryList">{{categories}}</option>
+    </select>
+</div>
+<div>
+    <label>Enter the Product Id number :</label>
+    <input type="number" placeholder="Please enter the product ID here" [(ngModel)]="NewProduct.id" />
+</div>
+<div>
+    <label>Enter the product title :</label>
+    <input type="text" placeholder="Please enter the product title here" [(ngModel)]="NewProduct.title"  />
+</div>
+<div>
+    <label>Enter the Product Price :</label>
+    <input type="number" placeholder="Please enter the product price here" [(ngModel)]="NewProduct.price" />
+</div>
+<div>
+    <label>Enter the Product Description :</label>
+    <input type="text" placeholder="Please enter the product description here" [(ngModel)]="NewProduct.description" />
+</div>
+<div>
+    <label>Enter the Product Category :</label>
+    <select  [(ngModel)]="NewProduct.category">
+        <option value="" disabled>Please select anyone category</option>
+        <option *ngFor="let categories of CategoryList">{{categories}}</option>
+    </select>
+</div>
+<div>
+    <label>Enter the Product Image URL :</label>
+    <input type="text" placeholder="Please enter the product URL here" [(ngModel)]="NewProduct.image" />
+</div>
+<div>
+    <button (click)="addNewProduct()">Click to add new product</button>
+</div>
+<div>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Category</td>
+            <td>Image</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let products of ProductList"> 
+            <td>{{products.id}}</td>
+            <td>{{products.title}}</td>
+            <td>{{products.price}}</td>
+            <td>{{products.description}}</td>
+            <td>{{products.category}}</td>
+            <td>
+                <img src="{{products.image}}" class="image" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="ProductList.length == 0">
+    <h1>Loading, Please Wait for a while</h1>
+</div>
+</div>

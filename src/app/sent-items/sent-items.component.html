@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Profile Picture</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let profile of userProfileList"> 
+            <td>{{profile.id}}</td>
+            <td>{{profile.first_name}}</td>
+            <td>{{profile.last_name}}</td>
+            <td>{{profile.email}}</td>
+            <td>
+                <img src="{{profile.avatar}}" class="image" />
+            </td>
+        </tr>
+    </tbody>
+</table>

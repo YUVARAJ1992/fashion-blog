@@ -1,0 +1,17 @@
+
+<div>
+    <div class="header">
+        <!-- <button class="btn" [routerLink]="['/newdashboard/header']" >Header</button> -->
+        <button class="btn-header" (click)="onClickLogin()">Logout</button>
+    </div>
+    <div class="wrapper">
+        <div class="sidebar">
+            <button class="btn" [routerLink]="['/newdashboard']" >Inbox</button>
+            <button class="btn" [routerLink]="['/newdashboard/sent']" >Sent Items</button>
+            <button class="btn" [routerLink]="['/newdashboard/trash']" >Trash</button>
+        </div>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    </div>

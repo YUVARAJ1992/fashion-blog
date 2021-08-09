@@ -1,0 +1,53 @@
+<div>
+    <label>Enter Your First Name :</label> 
+    <input type="text" placeholder="Please enter first name.." [(ngModel)]="registerForm.firstName"/>
+  </div>
+  <div>
+    <label>Enter Your Last Name :</label>
+    <input type="text" placeholder="Please enter last name.." [(ngModel)]="registerForm.lastName"/>
+  </div>
+  <div>
+    <label>Enter Your Email ID :</label>
+    <input type="text" placeholder="Please enter email id.." [(ngModel)]="registerForm.emailId"/>
+  </div>
+  <div>
+    <label>Enter Your Password :</label>
+    <input type="password" placeholder="Please enter password.." [(ngModel)]="registerForm.password"/>
+  </div>
+  <div>
+    <label>Select your D.O.B :</label>
+    <input type="date" [(ngModel)]="registerForm.dob"/>
+  </div>
+  <div>
+    <label>Select your Gender :</label>
+    <input type="radio" name="gender" value="male" [(ngModel)]="registerForm.gender"/>Male
+    <input type="radio" name="gender" value="female" [(ngModel)]="registerForm.gender" />Female
+    <input type="radio" name="gender" value="Don't want to specify" [(ngModel)]="registerForm.gender"/>Others
+  </div>
+  <div>
+    <label>Select your Hobbies :</label>
+     <input type="checkbox" value="cricket" name="hobbies" (change)="onChangeCheckbox($event)" >Cricket
+     <input type="checkbox" value="chess" name="hobbies" (change)="onChangeCheckbox($event)" >Chess
+     <input type="checkbox" value="foot ball" name="hobbies" (change)="onChangeCheckbox($event)">Foot Ball
+     <input type="checkbox" value="hockey" name="hobbies" (change)="onChangeCheckbox($event)">Hockey
+     <input type="checkbox" value="carrom" name="hobbies" (change)="onChangeCheckbox($event)">Carrom
+     <input type="checkbox" value="baseball" name="hobbies" (change)="onChangeCheckbox($event)">Base Ball
+   </div>
+  <div>
+    <label>Enter your Address :</label>
+    <textarea placeholder="Please enter your address.."[(ngModel)]="registerForm.address" ></textarea>
+   </div>
+   <div>
+    <label>Select your City :</label>
+    <select [(ngModel)]="registerForm.city">
+      <option selected disabled>Please select any City</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Salem">Salem</option>
+      <option value="Erode">Erode</option>
+      <option value="Trichy">Trichy</option>
+      <option value="Ooty">Ooty</option>
+    </select>
+  </div>
+  <div>
+    <button (click) = "onRegister()">Create My Account</button>
+  </div>

@@ -1,0 +1,21 @@
+.m-top-15{
+    margin-top: 15px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 18%;
+}
+.input{
+    font-size: 20px;
+    width: 250px;
+}
+.label{
+    display: inline-block;
+    width: 150px;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+}

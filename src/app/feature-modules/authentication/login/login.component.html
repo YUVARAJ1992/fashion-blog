@@ -1,0 +1,25 @@
+<h1>Welcome to the Fashion Blog</h1>
+<div class="form">
+    <div class="m-top-15">
+        <label class="label">Enter the Email ID: </label>
+        <input type="text" class="input" placeholder="Enter the Email ID here" [(ngModel)]="loginForm.email" />
+    </div>
+    <div class="m-top-15 center">
+        <label class="label">Enter the Passowrd: </label>
+        <!-- <input type="password" class="input" placeholder="Type your password here" [(ngModel)]="userName.password" /> -->
+
+        <input [type]="passwordShowHide ? 'password' : 'text'" class="input" placeholder="Type your password here"
+        [(ngModel)]="loginForm.password" />
+        <img src="/assets/open-eye.png" *ngIf="!passwordShowHide" width="25px" height="25px"
+            (click)="showHidePassword()">
+        <img src="/assets/close-eye.png" *ngIf="passwordShowHide" width="25px" height="25px"
+            (click)="showHidePassword()"> 
+    </div>
+    <div class="m-top-15">
+        <button (click)="onClickLogin()">Login</button>
+    </div>
+    <div>
+        <h1>{{loginForm.email}}</h1>
+        <h1>{{loginForm.password}}</h1>
+    </div>
+</div>

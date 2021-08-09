@@ -1,0 +1,20 @@
+
+<div>
+<div class="header">
+
+</div>
+<div class="wrapper">
+    <div class="sidebar">
+        <button class="btn" [routerLink]="['/dashboard']" >Inbox</button>
+        <button class="btn" [routerLink]="['/dashboard/sent']" >Sent Items</button>
+        <button class="btn" [routerLink]="['/dashboard/deleted']" >Deleted</button>
+        <button class="btn" [routerLink]="['/dashboard/trash']" >Trash</button>
+        <button class="btn" [routerLink]="['/dashboard/product']">Products</button>
+        <button class="btn" [routerLink]="['/dashboard/student-record']">Student Record</button>
+        <button class="btn" [routerLink]="['/dashboard/employee']">Employee</button>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+</div>
